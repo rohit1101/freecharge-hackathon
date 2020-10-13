@@ -11,8 +11,8 @@ export default class App extends React.Component {
   async componentDidMount() {
     const res=await fetch('http://starlord.hackerearth.com/recipe')
     const data=await res.json()
-    
     this.setState({recipe_arr:data})
+    localStorage.setItem('recipe_arr',JSON.stringify(this.state.recipe_arr))
   }
   
   render() {
@@ -28,7 +28,8 @@ export default class App extends React.Component {
                 <img src={recipe.image} alt={recipe.name} />
                 <p>{recipe.description}</p>
                 <h5>Label: {recipe.label ? recipe.label : 'Random' }</h5>
-                <Link to='/payment'>Pay Now</Link>
+                
+                <Link to={`/payment/${recipe.id}`}>Pay Now</Link>
                 <hr/>
             </div>
           )
