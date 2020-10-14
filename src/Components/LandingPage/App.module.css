@@ -4,22 +4,27 @@
 }
 
 .card_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  grid-gap: 3rem;
-}
-
-.card {
-  border: 2px solid #030303;
-  width: 100%;
   display: flex;
-  flex-flow: column wrap;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.card {
+  width: 25rem;
+  height: 28rem;
+  border: 2px solid #030303;
+  padding: 1rem 1rem;
+  margin: 1.5rem 0;
+}
+
 .card p {
-  text-align: center;
-  padding: 0 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card img {
+  width: 25rem;
+  height: 10rem;
+  object-fit: scale-down;
 }

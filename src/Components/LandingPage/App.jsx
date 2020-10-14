@@ -22,11 +22,10 @@ export default class App extends React.Component {
         {this.state.recipe_arr.map(recipe=> {
           return (
             <div key={recipe.id} className={styles.card}>
-            
                 <h2>{recipe.name}</h2>
                 <h3>{recipe.category}</h3>
                 <h4>${recipe.price}</h4>
-                <img width="200px" height="150px" src={recipe.image} alt={recipe.name} />
+                <img src={recipe.image} alt={recipe.name} />
                 <p>{recipe.description}</p>
                 <h5>Label: {recipe.label ? recipe.label : 'Random' }</h5>
                 <Link to={`/payment/${recipe.id}`}>Pay Now</Link>
@@ -35,7 +34,6 @@ export default class App extends React.Component {
           )
         })}
         </div>
-
       </div>
     )
   }
